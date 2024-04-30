@@ -4,7 +4,6 @@ from src.exception import CustomException
 from src.utils import load_object
 import os
 
-
 class PredictPipeline:
     def __init__(self):
         pass
@@ -12,14 +11,15 @@ class PredictPipeline:
     def predict(self,features):
         try:
             model_path=os.path.join("artifacts","model.pkl")
-            preprocessor_path=os.path.join('artifacts','preprocessor.pkl')
+            preprocessor_path=os.path.join('artifacts','proprocessor.pkl')
             print("Before Loading")
             model=load_object(file_path=model_path)
             preprocessor=load_object(file_path=preprocessor_path)
             print("After Loading")
-            data_scaled=preprocessor.transform(features)
-            preds=model.predict(data_scaled)
-            return preds
+            data=pd.DataFrame(features)
+            pred = model.predict(preprocessor.transform(data))
+            return pred
+
         
         except Exception as e:
             raise CustomException(e,sys)
@@ -66,3 +66,4 @@ class CustomData:
 
         except Exception as e:
             raise CustomException(e, sys)
+        
