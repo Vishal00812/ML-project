@@ -15,9 +15,8 @@ def main():
     parental_level_of_education= st.selectbox('Parental LeveEducation', ["associate's degree", "bachelor's degree", "high school", "master's degree", "some college", "some high school"])
     lunch = st.selectbox('Lunch Type', ['free/reduced', 'standard'])
     test_preparation = st.selectbox('Test Preparation Course', ['none', 'completed'])
-    writing_score = st.number_input('Writing Score out of 100', min_value=0, max_value=100)
-    reading_score = st.number_input('Reading Score out of 100', min_value=0, max_value=100)
-
+    writing_score = st.slider("Enter Writing Marks", min_value=0, max_value=100, value=50)
+    reading_score = st.slider("Enter Reading Marks", min_value=0, max_value=100, value=50)
     # Predict button
     if st.button('Predict your Maths Score'):
         try:
