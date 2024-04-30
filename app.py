@@ -10,11 +10,11 @@ def main():
     st.subheader('Student Exam Performance Prediction')
 
     # Form inputs
-    gender = st.selectbox('gender', ['Male', 'Female'])
-    ethnicity = st.selectbox('ethnicity', ['Group A', 'Group B', 'Group C', 'Group D', 'Group E'])
+    gender = st.selectbox('gender', ['male', 'female'])
+    ethnicity = st.selectbox('ethnicity', ['group A', 'group B', 'group C', 'group D', 'group E'])
     parental_level_of_education= st.selectbox('Parental LeveEducation', ["associate's degree", "bachelor's degree", "high school", "master's degree", "some college", "some high school"])
-    lunch = st.selectbox('Lunch Type', ['Free/Reduced', 'Standard'])
-    test_preparation = st.selectbox('Test Preparation Course', ['None', 'Completed'])
+    lunch = st.selectbox('Lunch Type', ['free/reduced', 'standard'])
+    test_preparation = st.selectbox('Test Preparation Course', ['none', 'completed'])
     writing_score = st.number_input('Writing Score out of 100', min_value=0, max_value=100)
     reading_score = st.number_input('Reading Score out of 100', min_value=0, max_value=100)
 
